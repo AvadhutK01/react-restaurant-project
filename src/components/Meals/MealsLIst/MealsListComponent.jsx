@@ -6,7 +6,7 @@ const MealsListComponent = () => {
     const mealsList = [
         { Id: 1, name: 'Butter Chicken', description: 'Creamy and flavorful chicken curry', price: 'र250', image: 'Butter_chicken.jpg' },
         { Id: 2, name: 'Vegetable Biryani', description: 'Fragrant rice with mixed vegetables', price: 'र180', image: 'Veg_biryani.jpg' },
-        { Id: 3, name: 'Paneer Tikka', description: 'Grilled cottage cheese with spices', price: 'र250', image: 'paneer_tikka.jpg' },
+        { Id: 3, name: 'Paneer Tikka', description: 'Grilled cottage cheese with spices', price: 'र210', image: 'paneer_tikka.jpg' },
         { Id: 4, name: 'Chicken Biryani', description: 'Spiced rice with tender chicken pieces', price: 'र200', image: 'chicken_biryani.jpg' },
     ];
 
