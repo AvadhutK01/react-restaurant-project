@@ -11,4 +11,6 @@ header nav div {
 h1 {
     margin: auto 0;
     margin-inline-start: 1.25rem;
+    font-weight: bold;
+    font-size: larger;
 }
