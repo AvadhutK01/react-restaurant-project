@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './ModalComponent.css';
 
-const ModalComponent = () => {
+const ModalComponent = (props) => {
     const meals = [
         { name: 'Butter Chicken', quantity: 2, amount: 500 },
         { name: 'Paneer Tikka', quantity: 1, amount: 210 },
@@ -34,7 +34,7 @@ const ModalComponent = () => {
                 </ul>
                 <div className="total">Total: र{totalAmount}</div>
                 <div className="buttons">
-                    <button className="close-btn">
+                    <button className="close-btn" onClick={() => props.handleModal(false)}>
                         Close
                     </button>
                     <button className="order-btn">Order</button>

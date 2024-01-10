@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './HeaderComponent.css'
 
-const HeaderComponent = () => {
+const HeaderComponent = (props) => {
     const [cartCount, setCartCount] = useState(0);
 
     return (
@@ -9,7 +9,7 @@ const HeaderComponent = () => {
             <nav>
                 <div>
                     <h1>Foods&Meals</h1>
-                    <div className="flex justify-center items-center mr-5 cursor-pointer">
+                    <div className="flex justify-center items-center mr-5 cursor-pointer" onClick={() => props.handleModal(true)}>
                         <div className="relative">
                             <div className="t-0 absolute left-3">
                                 <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">{cartCount}</p>
