@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './ModalComponent.css';
+import CartComponent from '../../Cart/CartComponent';
+
 
 const ModalComponent = (props) => {
-    const meals = [
-        { name: 'Butter Chicken', quantity: 2, amount: 500 },
-        { name: 'Paneer Tikka', quantity: 1, amount: 210 },
-    ];
-
-    const totalAmount = meals.reduce((total, meal) => total + meal.amount, 0);
-
     const modalRoot = document.getElementById('modal');
     const modalContainer = document.createElement('div');
 
@@ -25,14 +20,7 @@ const ModalComponent = (props) => {
         <div className="modal-overlay">
             <div className="modal">
                 <h2>Order Summary</h2>
-                <ul>
-                    {meals.map((meal, index) => (
-                        <li key={index}>
-                            {meal.quantity}x {meal.name} - र{meal.amount}
-                        </li>
-                    ))}
-                </ul>
-                <div className="total">Total: र{totalAmount}</div>
+                <CartComponent />
                 <div className="buttons">
                     <button className="close-btn" onClick={() => props.handleModal(false)}>
                         Close

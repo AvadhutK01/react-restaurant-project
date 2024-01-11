@@ -5,7 +5,6 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    /* Increased opacity for better visibility */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,44 +12,43 @@
 }
 
 .modal {
+    width: 40rem;
     background: #fff;
     padding: 40px;
-    /* Increased padding for a bigger modal */
     border-radius: 12px;
-    /* Increased border radius for a softer look */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    /* Increased box-shadow for a subtle lift */
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    /* Added margin for better spacing */
+    font-weight: bold;
 }
 
 ul {
     list-style: none;
     padding: 0;
+    height: 10rem;
+    overflow: auto;
 }
 
 li {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 12px;
-    /* Adjusted margin for better spacing */
 }
 
 .total {
     text-align: right;
     margin-top: 20px;
+    margin-right: 2.5rem;
     font-weight: bold;
-    /* Emphasized total by making it bold */
 }
 
 .buttons {
     display: flex;
-    justify-content: space-around;
-    /* Improved spacing between buttons */
-    margin-top: 30px;
-    /* Increased top margin for better separation */
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .close-btn,
