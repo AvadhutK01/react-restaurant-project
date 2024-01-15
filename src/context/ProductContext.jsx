@@ -7,7 +7,7 @@ const productContext = React.createContext({
 
 
 export const ProductContextProvider = (props) => {
-    const [productList, setProductList] = useState(JSON.parse(localStorage.getItem("Shoesproducts")) || [
+    const [productList, setProductList] = useState(JSON.parse(localStorage.getItem("foodProducts")) || [
         { Id: 1, name: 'Butter Chicken', description: 'Creamy and flavorful chicken curry', price: '250', image: 'Butter_chicken.jpg' },
         { Id: 2, name: 'Vegetable Biryani', description: 'Fragrant rice with mixed vegetables', price: '180', image: 'Veg_biryani.jpg' },
         { Id: 3, name: 'Paneer Tikka', description: 'Grilled cottage cheese with spices', price: '210', image: 'paneer_tikka.jpg' },
@@ -23,7 +23,7 @@ export const ProductContextProvider = (props) => {
         setProductList((prevProducts) => [
             ...prevProducts,
             {
-                id: Math.random() * new Date(),
+                Id: Math.random() * new Date(),
                 ...newProduct
             }
         ]);

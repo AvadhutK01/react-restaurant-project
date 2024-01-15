@@ -10,11 +10,11 @@ const CartContext = React.createContext({
 
 export const CartContextProvider = (props) => {
     const [cartCount, setCartCount] = useState(0);
-    const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem("Foodcart")) || []);
 
     useEffect(() => {
         setCartCount(cart.length);
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("Foodcart", JSON.stringify(cart));
     }, [cart]);
 
     const addToCartHandler = (item) => {
