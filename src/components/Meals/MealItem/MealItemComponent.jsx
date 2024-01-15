@@ -47,7 +47,7 @@ const MealItemComponent = ({ meal }) => {
                         </button>
                     </div>
                 </div>
-                <button type="button" className="add-to-cart" onClick={() => handleAddToCart(meal)}>ADD</button>
+                <button type="button" className="add-to-cart" onClick={() => handleAddToCart(meal)}>Add To Cart</button>
             </div>
         </div>
     )

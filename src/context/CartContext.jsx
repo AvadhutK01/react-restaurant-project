@@ -4,16 +4,18 @@ const CartContext = React.createContext({
     cart: [],
     addToCartHandler: (item) => { },
     updateQuantityHandler: (Id, Mode) => { },
+    clearCart: () => { },
     cartCount: 0
 });
 
 export const CartContextProvider = (props) => {
     const [cartCount, setCartCount] = useState(0);
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
     useEffect(() => {
-        setCartCount(cart.length)
-    }, [cart])
+        setCartCount(cart.length);
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
 
     const addToCartHandler = (item) => {
         const existingItem = cart.findIndex((cartItem) => cartItem.Id === item.Id);
@@ -57,8 +59,11 @@ export const CartContextProvider = (props) => {
         }).filter(Boolean));
     };
 
+    const clearCart = () => {
+        setCart([])
+    }
 
-    return <CartContext.Provider value={{ cartCount: cartCount, cart: cart, addToCartHandler: addToCartHandler, updateQuantityHandler: updateQuantityHandler }}>
+    return <CartContext.Provider value={{ cartCount: cartCount, cart: cart, addToCartHandler: addToCartHandler, updateQuantityHandler: updateQuantityHandler, clearCart: clearCart }}>
         {props.children}
     </CartContext.Provider>
 }
